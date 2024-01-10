@@ -94,3 +94,14 @@ const resources = [
         ]
     },
 ]
+
+var outputElement = document.getElementById('headerRessurser');
+
+for (var i = 0; i < resources.length; i++) {
+    var header = resources[i].category;
+
+    var createHeaderCategory = document.createElement('li');
+    createHeaderCategory.textContent = header;
+
+    outputElement.appendChild(createHeaderCategory);
+}

@@ -95,7 +95,7 @@ const resources = [
     },
 ]
 
-var outputElement = document.getElementById('headerRessurser');
+var CategoryHeader = document.getElementById('headerRessurser');
 
 for (var i = 0; i < resources.length; i++) {
     var header = resources[i].category;
@@ -103,5 +103,9 @@ for (var i = 0; i < resources.length; i++) {
     var createHeaderCategory = document.createElement('li');
     createHeaderCategory.textContent = header;
 
-    outputElement.appendChild(createHeaderCategory);
+    CategoryHeader.appendChild(createHeaderCategory);
+}
+
+function showSelectedResource(selectedResource, contentPage) {
+    for ()
 }

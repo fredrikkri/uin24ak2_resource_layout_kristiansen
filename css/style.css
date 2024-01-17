@@ -4,6 +4,7 @@
     --blue: #58699D;
     --black: #2A324B;
     --grey: #e2dfdf;
+    --darkgrey: #f6f3f3;
     --white: #fff;
     --clyan: #52fffc;
 
@@ -19,17 +20,6 @@ body {
     padding-top: 0;
 }
 
-/* Header */
-#headerBox {
-    color: var(--black);
-    border: 1px solid var(--grey);
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 5%;
-    margin-bottom: 2%;
-}
-h1 {font-size: 40px; margin-left: 20px;}
-
 /* main structure */
 #container {
     width: 100%;
@@ -38,27 +28,67 @@ h1 {font-size: 40px; margin-left: 20px;}
     min-height: 200px;
     background-color: var(--white);
 }
-ul {
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-}
-li {
-    display: inline-block;
-    margin: 10px;
-    font-size: 15px;
+
+/* Header */
+nav {
+    color: var(--black);
+    border-radius: 10px;
 }
 nav a {
     border: 1px solid var(--grey);
     display: inline-block;
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: var(--black);
-    background-color: #f6f3f3;
+    background-color: var(--darkgrey);
     text-decoration: none;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 nav a:hover {
-    text-decoration: underline;
-
+    background-color: var(--clyan);
+    border: 1px solid var(--clyan);
 }
+h1 {
+    font-size: 40px; 
+    padding: 2rem;
+    border: 0.1rem solid var(--grey);
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    gap: 10px;
+    /* https://stackoverflow.com/questions/11903773/add-space-between-li-elements */
+    /* for å finne ut hvordan man får gap mellom li elementer i ul. */
+}
+li {
+    display: inline-block;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* https://stackoverflow.com/questions/48272207/displaying-li-in-columns */
+    /* For å finne ut hvordan jeg legger liste-elementer i column. */
+}
+
 p {font-size: 1rem;}
+
+/* Resurs side */
+main {
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 0;
+}
+main article {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 1rem 25% 1rem 1rem;
+    border-top: 0.3rem solid var(--clyan);
+    border-right: 0.1rem solid var(--grey);
+    border-bottom: 0.1rem solid var(--grey);
+    border-left: 0.1rem solid var(--grey);
+}
+article ul {
+    margin-left: 1rem;
+}

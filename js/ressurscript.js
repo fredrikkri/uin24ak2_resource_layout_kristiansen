@@ -1,17 +1,19 @@
 let resourceHTML = ""
+let links = ""
+resources.map(resource => {
+    links = ""
+    resource.sources.map(source => links += `<a href="${source.url}>${source.title}</a>`)
+    resourceHTML +=
+    `<article>
+    <h3>${resource.category}</h3>
+    <p>${resource.text}</p>
+    <ul>
+        <li>
+            ${links}
+        </li>
+    </ul>
+    </article>`})
 
-resources.map(resource => resourceHTML +=
-`<article>
-<h3>${resource.category}</h3>
-<p>${resource.text}</p>
-<ul>
-    <li>
-        <a href="${resource.sources[0]['url']}">${resource.sources[0]['title']}</a>
-        <a href="${resource.sources[1]['url']}">${resource.sources[1]['title']}</a>
-        <a href="${resource.sources[2]['url']}">${resource.sources[2]['title']}</a>
-    </li>
-</ul>
-</article>`)
 
 console.log(resourceHTML)
 

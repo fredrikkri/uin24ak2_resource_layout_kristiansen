@@ -89,6 +89,6 @@ main article {
     border-bottom: 0.1rem solid var(--grey);
     border-left: 0.1rem solid var(--grey);
 }
-article ul {
+main article ul {
     margin-left: 1rem;
 }

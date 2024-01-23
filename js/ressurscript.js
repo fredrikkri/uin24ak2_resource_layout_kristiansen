@@ -1,33 +1,38 @@
 // Navigasjonsbar
 let kategorierHTML = ""
 resources.map(kategori => {
-    kategorierHTML += `<li><a id="${kategori.category}" href="#" onclick="${pickCategory(kategori.category)}">${kategori.category}</a></li>`
+    kategorierHTML += `<button id="${kategori.category}" onclick="showContent('${kategori.category}')">${kategori.category}</button>`
+    let kat = kategori.category
+    console.log(kategori)
+
 })
 
-const kategorier = document.getElementsByTagName("ul")
+
+// konkantinering (template literals) - google dette
+
+const kategorier = document.getElementsByTagName("section")
 kategorier[0].innerHTML = kategorierHTML
 
-function pickCategory(katName) {
-    resources.map(kategori => {
-        console.log(kategori.category)
-            if (kategori.category === katName) {
-                showContent(kategori.category)
-            }
-        }
-    )
-}
+//function pickCategory(katName) {
+    //resources.map(kategori => {
+            //if (kategori.category === katName) {
+                //return showContent(kategori.category)
+            //}
+        //}
+    //)
+//}
 
 
 // Main seksjon
 function showContent(selectedCategory){
+
     let resourceHTML = ""
     let links = ""
 
     resources.map(resource => {
         if(selectedCategory === resource.category) {
-            links = ""
             resource.sources.map(source => links += `<a href="${source.url}">${source.title}</a>`)
-            resourceHTML +=
+            resourceHTML =
             `<article>
             <h3>${resource.category}</h3>
             <p>${resource.text}</p>

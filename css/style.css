@@ -7,7 +7,6 @@
     --darkgrey: #f6f3f3;
     --white: #fff;
     --clyan: #52fffc;
-
     --font: 'Montserrat', sans-serif;
     --rootsize: 20px;
     --maxsize: 1200px;
@@ -33,20 +32,27 @@ body {
 nav {
     color: var(--black);
     border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+
+    
 }
-nav a {
-    border: 1px solid var(--grey);
-    display: inline-block;
-    padding: 1rem 2rem;
+nav section {
+    display: inline-block;    
     color: var(--black);
-    background-color: var(--darkgrey);
     text-decoration: none;
     text-transform: uppercase;
     box-sizing: border-box;
 }
-nav a:hover {
+
+nav section button {
+    border: none;
+    padding: 1rem 1rem;
+    margin: 0 0.5rem;
+
+}
+nav section button:hover {
     background-color: var(--clyan);
-    border: 1px solid var(--clyan);
 }
 h1 {
     font-size: 40px; 
@@ -59,19 +65,7 @@ ul {
     display: flex;
     margin-top: 3rem;
     margin-bottom: 0;
-    gap: 10px;
-    /* https://stackoverflow.com/questions/11903773/add-space-between-li-elements */
-    /* for å finne ut hvordan man får gap mellom li elementer i ul. */
 }
-li {
-    display: inline-block;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    /* https://stackoverflow.com/questions/48272207/displaying-li-in-columns */
-    /* For å finne ut hvordan jeg legger liste-elementer i column. */
-}
-
 p {font-size: 1rem;}
 
 /* Resurs side */
@@ -91,4 +85,12 @@ main article {
 }
 main article ul {
     margin-left: 1rem;
+}
+li {
+    display: inline-block;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* https://stackoverflow.com/questions/48272207/displaying-li-in-columns */
+    /* For å finne ut hvordan jeg legger liste-elementer i column. */
 }

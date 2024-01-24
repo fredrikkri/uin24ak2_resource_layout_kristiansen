@@ -2,26 +2,10 @@
 let kategorierHTML = ""
 resources.map(kategori => {
     kategorierHTML += `<button id="${kategori.category}" onclick="showContent('${kategori.category}')">${kategori.category}</button>`
-    let kat = kategori.category
-    console.log(kategori)
-
 })
-
-
-// konkantinering (template literals) - google dette
 
 const kategorier = document.getElementsByTagName("section")
 kategorier[0].innerHTML = kategorierHTML
-
-//function pickCategory(katName) {
-    //resources.map(kategori => {
-            //if (kategori.category === katName) {
-                //return showContent(kategori.category)
-            //}
-        //}
-    //)
-//}
-
 
 // Main seksjon
 function showContent(selectedCategory){
@@ -31,6 +15,7 @@ function showContent(selectedCategory){
 
     resources.map(resource => {
         if(selectedCategory === resource.category) {
+            // Fikk hjelp av studass for å få til mapping på linjen under.
             resource.sources.map(source => links += `<a href="${source.url}">${source.title}</a>`)
             resourceHTML =
             `<article>
